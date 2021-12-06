@@ -37,6 +37,13 @@ void tree(int ax,int ay,int rad)
     circle(ax+10+50,ay+130-15,rad,2000);
 
 }
+
+void cloud(int x, int y,int rad){
+    glColor3ub(255, 255, 255);
+    circle(x,y,rad,500);
+    circle(x-50,y-15,rad-10,100);
+    circle(x+50,y-15,rad-10,2000);
+}
 void sun(void)
 {
     glColor3ub(250,253,15);
@@ -240,6 +247,18 @@ void sky(void)
     glEnd();
 }
 
+void trees(void){
+    tree(80,280,50);
+    tree(450,370,50);
+    tree(510,530,45);
+
+}
+
+void clouds(void){
+    cloud(480,1100,50);
+    cloud(780,980,50);
+    cloud(1100,1150,50);
+}
 void display(void)
 {
     /* clear all pixels */
@@ -251,7 +270,8 @@ void display(void)
     sky();
     apartment();
     sun();
-    tree(150,300,50);
+    clouds();
+    trees();
     glFlush ();
 }
 

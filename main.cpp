@@ -103,6 +103,22 @@ void apartment(void)
     glVertex3f(430,840,0);
     glVertex3f(0,840,0);
 
+
+    glColor3ub(28, 35, 54);
+
+    glVertex3f(0,430,0);
+    glVertex3f(500,430,0);
+    glVertex3f(500,450,0);
+    glVertex3f(0,450,0);
+
+    ///building road
+    glColor3ub(151, 163, 194);
+
+    glVertex3f(180,260,0);
+    glVertex3f(300,260,0);
+    glVertex3f(275,430,0);
+    glVertex3f(205,430,0);
+
     ///Windows left
     glColor3ub(0,0,0);
 
@@ -250,7 +266,7 @@ void sky(void)
 void trees(void){
     tree(80,280,50);
     tree(450,370,50);
-    tree(510,530,45);
+    tree(510,530,40);
 
 }
 
@@ -265,7 +281,7 @@ void display(void)
     glClear(GL_COLOR_BUFFER_BIT);
 
 
-     road();
+    road();
     surface();
     sky();
     apartment();

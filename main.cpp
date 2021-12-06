@@ -1,7 +1,7 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <math.h>
-#define PI 3.1416;
+
 
 
 void circle(float cx, float cy, float r, int num_segments)
@@ -20,21 +20,21 @@ void circle(float cx, float cy, float r, int num_segments)
     glFlush();
 }
 
-void tree(int ax,int ay,int bx,int cy,int crx,int cry, int cr_rad, int garbage)
+void tree(int ax,int ay,int rad)
 {
     glBegin(GL_QUADS);
     glColor3ub(15, 10, 6);
     glVertex3f(ax,ay,0);
-    glVertex3f(bx,ay,0);
-    glVertex3f(bx,cy,0);
-    glVertex3f(ax,cy,0);
+    glVertex3f(ax+20,ay,0);
+    glVertex3f(ax+20,ay+100,0);
+    glVertex3f(ax,ay+100,0);
 
     glEnd();
 
     glColor3ub(10, 33, 9);
-    circle(crx,cry,cr_rad,garbage);
-    circle(crx-50,cry-15,cr_rad,garbage);
-    circle(crx+50,cry-15,cr_rad,garbage);
+    circle(ax+10,ay+130,rad+10,500);
+    circle(ax+10-50,ay+130-15,rad,100);
+    circle(ax+10+50,ay+130-15,rad,2000);
 
 }
 void sun(void)
@@ -96,9 +96,99 @@ void apartment(void)
     glVertex3f(430,840,0);
     glVertex3f(0,840,0);
 
-    ///Windows
+    ///Windows left
+    glColor3ub(0,0,0);
 
+    glVertex3f(0,480,0);
+    glVertex3f(80,480,0);
+    glVertex3f(80,540,0);
+    glVertex3f(0,540,0);
 
+    glColor3ub(0,0,0);
+
+    glVertex3f(0,580,0);
+    glVertex3f(80,580,0);
+    glVertex3f(80,640,0);
+    glVertex3f(0,640,0);
+
+    glColor3ub(0,0,0);
+
+    glVertex3f(0,680,0);
+    glVertex3f(80,680,0);
+    glVertex3f(80,740,0);
+    glVertex3f(0,740,0);
+
+    glColor3ub(0,0,0);
+
+    glVertex3f(100,480,0);
+    glVertex3f(180,480,0);
+    glVertex3f(180,540,0);
+    glVertex3f(100,540,0);
+
+    glColor3ub(0,0,0);
+
+    glVertex3f(100,580,0);
+    glVertex3f(180,580,0);
+    glVertex3f(180,640,0);
+    glVertex3f(100,640,0);
+
+    glColor3ub(0,0,0);
+
+    glVertex3f(100,680,0);
+    glVertex3f(180,680,0);
+    glVertex3f(180,740,0);
+    glVertex3f(100,740,0);
+
+    ///Windows right
+    glColor3ub(0,0,0);
+
+    glVertex3f(300,480,0);
+    glVertex3f(380,480,0);
+    glVertex3f(380,540,0);
+    glVertex3f(300,540,0);
+
+    glColor3ub(0,0,0);
+
+    glVertex3f(300,580,0);
+    glVertex3f(380,580,0);
+    glVertex3f(380,640,0);
+    glVertex3f(300,640,0);
+
+    glColor3ub(0,0,0);
+
+    glVertex3f(300,680,0);
+    glVertex3f(380,680,0);
+    glVertex3f(380,740,0);
+    glVertex3f(300,740,0);
+
+    glColor3ub(0,0,0);
+
+    glVertex3f(400,480,0);
+    glVertex3f(480,480,0);
+    glVertex3f(480,540,0);
+    glVertex3f(400,540,0);
+
+    glColor3ub(0,0,0);
+
+    glVertex3f(400,580,0);
+    glVertex3f(480,580,0);
+    glVertex3f(480,640,0);
+    glVertex3f(400,640,0);
+
+    glColor3ub(0,0,0);
+
+    glVertex3f(400,680,0);
+    glVertex3f(480,680,0);
+    glVertex3f(480,740,0);
+    glVertex3f(400,740,0);
+
+    ///middle
+    glColor3ub(23, 10, 14);
+
+    glVertex3f(210,460,0);
+    glVertex3f(270,460,0);
+    glVertex3f(270,740,0);
+    glVertex3f(210,740,0);
 
     glEnd();
 
@@ -161,7 +251,7 @@ void display(void)
     sky();
     apartment();
     sun();
-    tree(150,300,170,400,160,430,50,2000);
+    tree(150,300,50);
     glFlush ();
 }
 

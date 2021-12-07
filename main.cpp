@@ -487,12 +487,97 @@ void solar(int x,int y){
     glVertex3f(x+150,y+140,0);
     glVertex3f(x,y+140,0);
 
+
     glEnd();
+
+
 }
 
 void solars(void){
     solar(600,450);
     solar(680,360);
+}
+
+///car
+void cars(void){
+    ///car1///
+    glBegin(GL_QUADS);
+    glColor3ub(200,0,0);
+
+    ///base
+    glVertex3f(100,170,0);
+    glVertex3f(300,170,0);
+    glVertex3f(300,200,0);
+    glVertex3f(100,200,0);
+
+    ///hud
+    glColor3ub(255,0,0);
+    glVertex3f(120,200,0);
+    glVertex3f(280,200,0);
+    glVertex3f(260,220,0);
+    glVertex3f(140,220,0);
+
+    glEnd();
+
+    ///wheels
+    glColor3ub(0,0,0);
+    circle(140,170,17,500);
+    circle(260,170,17,500);
+
+
+    ///car2///
+    glBegin(GL_QUADS);
+    glColor3ub(0,0,200);
+
+    ///base
+    glVertex3f(600,170,0);
+    glVertex3f(800,170,0);
+    glVertex3f(800,200,0);
+    glVertex3f(600,200,0);
+
+    ///hud
+    glColor3ub(0,0,255);
+    glVertex3f(620,200,0);
+    glVertex3f(780,200,0);
+    glVertex3f(760,220,0);
+    glVertex3f(640,220,0);
+
+    glEnd();
+
+    ///wheels
+    glColor3ub(0,0,0);
+    circle(640,170,17,500);
+    circle(760,170,17,500);
+
+}
+
+void van(void){
+    glBegin(GL_QUADS);
+    glColor3ub(240, 230, 236);
+
+    ///base
+    glVertex3f(1100,50,0);
+    glVertex3f(1300,50,0);
+    glVertex3f(1300,80,0);
+    glVertex3f(1100,80,0);
+
+    ///hud
+    glColor3ub(252, 247, 250);
+    glVertex3f(1120,80,0);
+    glVertex3f(1300,80,0);
+    glVertex3f(1300,125,0);
+    glVertex3f(1140,125,0);
+
+    glEnd();
+
+
+
+
+    ///wheels
+    glColor3ub(0,0,0);
+    circle(1130,50,17,500);
+    circle(1270,50,17,500);
+
 }
 void surface(void)
 {
@@ -554,6 +639,8 @@ void display(void)
     sun();
     clouds();
     trees();
+    cars();
+    van();
     glFlush ();
 }
 

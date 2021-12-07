@@ -47,7 +47,7 @@ void tree2(int x,int y){
     glEnd();
 
     glBegin(GL_TRIANGLES);
-    glColor3ub(10, 33, 9);
+    glColor3ub(230, 138, 198);
 
     glVertex3f(x-80,y+100,0);
     glVertex3f(x+100,y+100,0);
@@ -259,52 +259,240 @@ void apartment(void)
 }
 
 void building1(void){
+    tree2(850,560);
     glBegin(GL_QUADS);
-    glColor3ub(0,0,0);
+    glColor3ub(75, 110, 128);
 
     glVertex3f(900,480,0);
     glVertex3f(1150,480,0);
     glVertex3f(1150,700,0);
     glVertex3f(900,700,0);
 
+    glColor3ub(23, 14, 2);
+    glVertex3f(890,460,0);
+    glVertex3f(1150,460,0);
+    glVertex3f(1150,480,0);
+    glVertex3f(890,480,0);
+
+    glColor3ub(176, 104, 95);
+    glVertex3f(870,700,0);
+    glVertex3f(1180,700,0);
+    glVertex3f(1120,760,0);
+    glVertex3f(930,760,0);
+
+    ///windows left
+
+    glColor3ub(0, 0, 0);
+    glVertex3f(915,500,0);
+    glVertex3f(970,500,0);
+    glVertex3f(970,580,0);
+    glVertex3f(915,580,0);
+
+    glColor3ub(0, 0, 0);
+    glVertex3f(915,600,0);
+    glVertex3f(970,600,0);
+    glVertex3f(970,680,0);
+    glVertex3f(915,680,0);
+
+    ///windows middle
+    glColor3ub(41, 18, 18);
+    glVertex3f(1005,480,0);
+    glVertex3f(1050,480,0);
+    glVertex3f(1050,580,0);
+    glVertex3f(1005,580,0);
+
+    glColor3ub(0, 0, 0);
+    glVertex3f(1000,600,0);
+    glVertex3f(1055,600,0);
+    glVertex3f(1055,680,0);
+    glVertex3f(1000,680,0);
+
+    ///windows right
+    glColor3ub(0, 0, 0);
+    glVertex3f(1085,500,0);
+    glVertex3f(1140,500,0);
+    glVertex3f(1140,580,0);
+    glVertex3f(1085,580,0);
+
+    glColor3ub(0, 0, 0);
+    glVertex3f(1085,600,0);
+    glVertex3f(1140,600,0);
+    glVertex3f(1140,680,0);
+    glVertex3f(1085,680,0);
+
     glEnd();
+
+
 
 
 }
 void building2(void){
     glBegin(GL_QUADS);
-    glColor3ub(0,0,0);
+    glColor3ub(37, 29, 51);
 
     glVertex3f(1050,350,0);
     glVertex3f(1280,350,0);
     glVertex3f(1280,550,0);
     glVertex3f(1050,550,0);
 
+    glColor3ub(23, 14, 2);
+    glVertex3f(1030,320,0);
+    glVertex3f(1300,320,0);
+    glVertex3f(1300,350,0);
+    glVertex3f(1030,350,0);
+    ///windows
+    glColor3ub(73, 110, 158);
+
+    glVertex3f(1050,440,0);
+    glVertex3f(1280,440,0);
+    glVertex3f(1280,460,0);
+    glVertex3f(1050,460,0);
+
+    glVertex3f(1155,350,0);
+    glVertex3f(1175,350,0);
+    glVertex3f(1175,550,0);
+    glVertex3f(1155,550,0);
+
     glEnd();
 
+    glBegin(GL_TRIANGLES);
+    glColor3ub(61, 45, 43);
+
+    glVertex3f(1030,550,0);
+    glVertex3f(1300,550,0);
+    glVertex3f(1165,600,0);
+    glEnd();
 
 }
 void building3(void){
     glBegin(GL_QUADS);
-    glColor3ub(0,0,0);
+    glColor3ub(140, 140, 184);
 
     glVertex3f(1200,480,0);
     glVertex3f(1400,480,0);
     glVertex3f(1400,800,0);
     glVertex3f(1200,800,0);
 
+    glColor3ub(23, 14, 2);
+    glVertex3f(1180,480,0);
+    glVertex3f(1420,480,0);
+    glVertex3f(1420,520,0);
+    glVertex3f(1180,520,0);
+
+    ///windows
+
+    glColor3ub(0, 0, 0);
+
+    glVertex3f(1230,550,0);
+    glVertex3f(1280,550,0);
+    glVertex3f(1280,650,0);
+    glVertex3f(1230,650,0);
+
+    glColor3ub(0, 0, 0);
+
+    glVertex3f(1230,680,0);
+    glVertex3f(1280,680,0);
+    glVertex3f(1280,780,0);
+    glVertex3f(1230,780,0);
+
+    glColor3ub(0, 0, 0);
+
+    glVertex3f(1320,550,0);
+    glVertex3f(1370,550,0);
+    glVertex3f(1370,650,0);
+    glVertex3f(1320,650,0);
+
+    glColor3ub(0, 0, 0);
+
+    glVertex3f(1320,680,0);
+    glVertex3f(1370,680,0);
+    glVertex3f(1370,780,0);
+    glVertex3f(1320,780,0);
+
+
+
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(61, 45, 150);
+
+    glVertex3f(1200,800,0);
+    glVertex3f(1400,800,0);
+    glVertex3f(1300,900,0);
     glEnd();
 }
 void lighthouse(void){
     glBegin(GL_QUADS);
-    glColor3ub(0,0,0);
+    glColor3ub(178, 168, 191);
 
     glVertex3f(1450,500,0);
     glVertex3f(1550,500,0);
     glVertex3f(1550,900,0);
     glVertex3f(1450,900,0);
 
+    ///bottom
+    glColor3ub(65, 56, 77);
+
+    glVertex3f(1440,480,0);
+    glVertex3f(1560,480,0);
+    glVertex3f(1560,500,0);
+    glVertex3f(1440,500,0);
+
+    ///top
+    glColor3ub(24, 19, 31);
+
+    glVertex3f(1450,900,0);
+    glVertex3f(1550,900,0);
+    glVertex3f(1570,930,0);
+    glVertex3f(1430,930,0);
+
+    glColor3ub(150, 101, 133);
+
+    glVertex3f(1450,930,0);
+    glVertex3f(1550,930,0);
+    glVertex3f(1550,960,0);
+    glVertex3f(1450,960,0);
+
+    glColor3ub(255, 255, 255);
+
+    glVertex3f(1490,960,0);
+    glVertex3f(1510,960,0);
+    glVertex3f(1505,1060,0);
+    glVertex3f(1495,1060,0);
+
+
     glEnd();
+}
+///solar function
+void solar(int x,int y){
+    glBegin(GL_QUADS);
+    glColor3ub(0, 0, 0);
+
+    ///1st stand
+    glVertex3f(x,y,0);
+    glVertex3f(x+10,y,0);
+    glVertex3f(x+10,y+60,0);
+    glVertex3f(x,y+60,0);
+
+    ///2nd stand
+    glVertex3f(x+100,y,0);
+    glVertex3f(x+110,y,0);
+    glVertex3f(x+110,y+60,0);
+    glVertex3f(x+100,y+60,0);
+
+    ///plate
+    glColor3ub(166, 152, 161);
+    glVertex3f(x-20,y+60,0);
+    glVertex3f(x+130,y+60,0);
+    glVertex3f(x+150,y+140,0);
+    glVertex3f(x,y+140,0);
+
+    glEnd();
+}
+
+void solars(void){
+    solar(600,450);
+    solar(680,360);
 }
 void surface(void)
 {
@@ -336,7 +524,10 @@ void trees(void){
     tree1(450,370,50);
     tree1(510,530,40);
 
-    tree2(650,650);
+
+    tree2(1430,460);
+    tree2(1550,360);
+    tree1(1320,290,40);
 
 }
 
@@ -359,6 +550,7 @@ void display(void)
     building3();
     building2();
     lighthouse();
+    solars();
     sun();
     clouds();
     trees();

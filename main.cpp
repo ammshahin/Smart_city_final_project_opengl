@@ -20,7 +20,7 @@ void circle(float cx, float cy, float r, int num_segments)
     glFlush();
 }
 
-void tree(int ax,int ay,int rad)
+void tree1(int ax,int ay,int rad)
 {
     glBegin(GL_QUADS);
     glColor3ub(15, 10, 6);
@@ -37,7 +37,27 @@ void tree(int ax,int ay,int rad)
     circle(ax+10+50,ay+130-15,rad,2000);
 
 }
+void tree2(int x,int y){
+    glBegin(GL_QUADS);
+    glColor3ub(15, 10, 6);
+    glVertex3f(x,y,0);
+    glVertex3f(x+20,y,0);
+    glVertex3f(x+20,y+100,0);
+    glVertex3f(x,y+100,0);
+    glEnd();
 
+    glBegin(GL_TRIANGLES);
+    glColor3ub(10, 33, 9);
+
+    glVertex3f(x-80,y+100,0);
+    glVertex3f(x+100,y+100,0);
+    glVertex3f(((x-80)+(x+100))/2,y+150,0);
+
+    glVertex3f(x-60,y+130,0);
+    glVertex3f(x+80,y+130,0);
+    glVertex3f(((x-60)+(x+80))/2,y+180,0);
+    glEnd();
+}
 void cloud(int x, int y,int rad){
     glColor3ub(255, 255, 255);
     circle(x,y,rad,500);
@@ -238,6 +258,54 @@ void apartment(void)
 
 }
 
+void building1(void){
+    glBegin(GL_QUADS);
+    glColor3ub(0,0,0);
+
+    glVertex3f(900,480,0);
+    glVertex3f(1150,480,0);
+    glVertex3f(1150,700,0);
+    glVertex3f(900,700,0);
+
+    glEnd();
+
+
+}
+void building2(void){
+    glBegin(GL_QUADS);
+    glColor3ub(0,0,0);
+
+    glVertex3f(1050,350,0);
+    glVertex3f(1280,350,0);
+    glVertex3f(1280,550,0);
+    glVertex3f(1050,550,0);
+
+    glEnd();
+
+
+}
+void building3(void){
+    glBegin(GL_QUADS);
+    glColor3ub(0,0,0);
+
+    glVertex3f(1200,480,0);
+    glVertex3f(1400,480,0);
+    glVertex3f(1400,800,0);
+    glVertex3f(1200,800,0);
+
+    glEnd();
+}
+void lighthouse(void){
+    glBegin(GL_QUADS);
+    glColor3ub(0,0,0);
+
+    glVertex3f(1450,500,0);
+    glVertex3f(1550,500,0);
+    glVertex3f(1550,900,0);
+    glVertex3f(1450,900,0);
+
+    glEnd();
+}
 void surface(void)
 {
     glBegin(GL_QUADS);
@@ -264,9 +332,11 @@ void sky(void)
 }
 
 void trees(void){
-    tree(80,280,50);
-    tree(450,370,50);
-    tree(510,530,40);
+    tree1(80,280,50);
+    tree1(450,370,50);
+    tree1(510,530,40);
+
+    tree2(650,650);
 
 }
 
@@ -285,6 +355,10 @@ void display(void)
     surface();
     sky();
     apartment();
+    building1();
+    building3();
+    building2();
+    lighthouse();
     sun();
     clouds();
     trees();

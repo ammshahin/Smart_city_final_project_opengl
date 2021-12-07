@@ -222,7 +222,7 @@
 1250308678 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-1638824785 source:d:\graphics\smart_city_final_project_opengl\main.cpp
+1638911364 source:d:\graphics\smart_city_final_project_opengl\main.cpp
 	<GL/gl.h>
 	<GL/glut.h>
 	<math.h>

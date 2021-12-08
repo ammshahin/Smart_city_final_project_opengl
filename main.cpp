@@ -568,6 +568,7 @@ void van(void){
     glVertex3f(1300,125,0);
     glVertex3f(1140,125,0);
 
+
     glEnd();
 
 
@@ -577,6 +578,39 @@ void van(void){
     glColor3ub(0,0,0);
     circle(1130,50,17,500);
     circle(1270,50,17,500);
+
+}
+
+void bird(int x,int y){
+    glBegin(GL_QUADS);
+    glColor3ub(0,0,0);
+
+    glVertex3f(x,y,0);
+    glVertex3f(x+20,y-20,0);
+    glVertex3f(x+40,y+20,0);
+    glVertex3f(x+20,y-40,0);
+
+    glEnd();
+
+}
+void birds(void){
+    int i = 7;
+    int x = 750,y = 1100;
+    while(i>0){
+        bird(x,y);
+        x += 50;
+        y -= 10;
+        i--;
+    }
+
+    int j = 6,a = 750, b = 900;
+    while(j>0){
+        bird(a,b);
+        a += 50;
+        b += 15;
+        j--;
+    }
+
 
 }
 void surface(void)
@@ -641,6 +675,7 @@ void display(void)
     trees();
     cars();
     van();
+    birds();
     glFlush ();
 }
 

@@ -704,7 +704,7 @@ int main(int argc, char** argv)
 
     glutInitWindowSize (800, 600);
     glutInitWindowPosition (100, 100);
-    glutCreateWindow ("Rima r Shahin er Elaka");
+    glutCreateWindow ("Smart City");
     init ();
     glutDisplayFunc(display);
 

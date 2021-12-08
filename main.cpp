@@ -10,11 +10,11 @@ void circle(float cx, float cy, float r, int num_segments)
     glBegin(GL_TRIANGLE_FAN);
     for (int i = 0; i < num_segments; i++)
     {
-        float theta = 2.0f * 3.1415926f * float(i) / float(num_segments);//get current angle
+        float theta = 2.0f * 3.1415926f * float(i) / float(num_segments);
 
-        float x = r * cosf(theta);//calculate x
-        float y = r * sinf(theta);//calculate y
-        glVertex2f(x + cx, y + cy);//output vertex
+        float x = r * cosf(theta);
+        float y = r * sinf(theta);
+        glVertex2f(x + cx, y + cy);
     }
     glEnd();
     glFlush();
@@ -47,7 +47,7 @@ void tree2(int x,int y){
     glEnd();
 
     glBegin(GL_TRIANGLES);
-    glColor3ub(230, 138, 198);
+    glColor3ub(41, 230, 34);
 
     glVertex3f(x-80,y+100,0);
     glVertex3f(x+100,y+100,0);
@@ -67,7 +67,7 @@ void cloud(int x, int y,int rad){
 void sun(void)
 {
     glColor3ub(250,253,15);
-    circle(300,1000,90,2000);
+    circle(285,1000,80,2000);
 }
 
 void road(void)
@@ -147,7 +147,7 @@ void apartment(void)
     glVertex3f(80,540,0);
     glVertex3f(0,540,0);
 
-    glColor3ub(0,0,0);
+    glColor3ub(212, 199, 83);
 
     glVertex3f(0,580,0);
     glVertex3f(80,580,0);
@@ -175,7 +175,7 @@ void apartment(void)
     glVertex3f(180,640,0);
     glVertex3f(100,640,0);
 
-    glColor3ub(0,0,0);
+    glColor3ub(212, 199, 83);
 
     glVertex3f(100,680,0);
     glVertex3f(180,680,0);
@@ -183,7 +183,7 @@ void apartment(void)
     glVertex3f(100,740,0);
 
     ///Windows right
-    glColor3ub(0,0,0);
+    glColor3ub(212, 199, 83);
 
     glVertex3f(300,480,0);
     glVertex3f(380,480,0);
@@ -218,7 +218,7 @@ void apartment(void)
     glVertex3f(480,640,0);
     glVertex3f(400,640,0);
 
-    glColor3ub(0,0,0);
+    glColor3ub(212, 199, 83);
 
     glVertex3f(400,680,0);
     glVertex3f(480,680,0);
@@ -282,7 +282,7 @@ void building1(void){
 
     ///windows left
 
-    glColor3ub(0, 0, 0);
+    glColor3ub(212, 199, 83);
     glVertex3f(915,500,0);
     glVertex3f(970,500,0);
     glVertex3f(970,580,0);
@@ -314,7 +314,7 @@ void building1(void){
     glVertex3f(1140,580,0);
     glVertex3f(1085,580,0);
 
-    glColor3ub(0, 0, 0);
+    glColor3ub(212, 199, 83);
     glVertex3f(1085,600,0);
     glVertex3f(1140,600,0);
     glVertex3f(1140,680,0);
@@ -388,14 +388,14 @@ void building3(void){
     glVertex3f(1280,650,0);
     glVertex3f(1230,650,0);
 
-    glColor3ub(0, 0, 0);
+    glColor3ub(212, 199, 83);
 
     glVertex3f(1230,680,0);
     glVertex3f(1280,680,0);
     glVertex3f(1280,780,0);
     glVertex3f(1230,780,0);
 
-    glColor3ub(0, 0, 0);
+    glColor3ub(212, 199, 83);
 
     glVertex3f(1320,550,0);
     glVertex3f(1370,550,0);
@@ -654,6 +654,8 @@ void clouds(void){
     cloud(480,1100,50);
     cloud(780,980,50);
     cloud(1100,1150,50);
+    cloud(1020,980,40);
+
 }
 void display(void)
 {
@@ -702,7 +704,7 @@ int main(int argc, char** argv)
 
     glutInitWindowSize (800, 600);
     glutInitWindowPosition (100, 100);
-    glutCreateWindow ("Rima");
+    glutCreateWindow ("Rima r Shahin er Elaka");
     init ();
     glutDisplayFunc(display);
 

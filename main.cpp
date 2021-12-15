@@ -58,6 +58,36 @@ void tree2(int x,int y)
     glVertex3f(x-60,y+130,0);
     glVertex3f(x+80,y+130,0);
     glVertex3f(((x-60)+(x+80))/2,y+180,0);
+
+    glVertex3f(x-55,y+150,0);
+    glVertex3f(x+75,y+150,0);
+    glVertex3f(((x-55)+(x+75))/2,y+215,0);
+    glEnd();
+}
+void tree2Night(int x,int y)
+{
+    glBegin(GL_QUADS);
+    glColor3ub(15, 10, 6);
+    glVertex3f(x,y,0);
+    glVertex3f(x+20,y,0);
+    glVertex3f(x+20,y+100,0);
+    glVertex3f(x,y+100,0);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(11, 64, 6);
+
+    glVertex3f(x-80,y+100,0);
+    glVertex3f(x+100,y+100,0);
+    glVertex3f(((x-80)+(x+100))/2,y+150,0);
+
+    glVertex3f(x-60,y+130,0);
+    glVertex3f(x+80,y+130,0);
+    glVertex3f(((x-60)+(x+80))/2,y+180,0);
+
+    glVertex3f(x-55,y+150,0);
+    glVertex3f(x+75,y+150,0);
+    glVertex3f(((x-55)+(x+75))/2,y+215,0);
     glEnd();
 }
 void cloud(int x, int y,int rad)
@@ -67,9 +97,22 @@ void cloud(int x, int y,int rad)
     circle(x-50,y-15,rad-10,100);
     circle(x+50,y-15,rad-10,2000);
 }
+
+void cloudNight(int x, int y,int rad)
+{
+    glColor3ub(99, 99, 99);
+    circle(x,y,rad,500);
+    circle(x-50,y-15,rad-10,100);
+    circle(x+50,y-15,rad-10,2000);
+}
 void sun(void)
 {
     glColor3ub(252, 111, 3);
+    circle(200,1100,80,2000);
+}
+void moon(void)
+{
+    glColor3ub(200, 207, 203);
     circle(200,1100,80,2000);
 }
 
@@ -77,6 +120,33 @@ void road(void)
 {
     glBegin(GL_QUADS);
     glColor3ub(106,108,109);
+
+    glVertex3f(0,30,0);
+    glVertex3f(1600,30,0);
+    glVertex3f(1600,260,0);
+    glVertex3f(0,260,0);
+
+
+    ///Road Divider
+    int dvx1 = 20, dvy1 = 145,dvx2 = 90, dvy3 = 130;
+    glBegin(GL_QUADS);
+    glColor3ub(0,0,0);
+
+    for(dvx1,dvx2; dvx1 <1600; dvx1+= 200,dvx2+= 200)
+    {
+        glVertex3f(dvx1,dvy1,0);
+        glVertex3f(dvx2,dvy1,0);
+        glVertex3f(dvx2,dvy3,0);
+        glVertex3f(dvx1,dvy3,0);
+    }
+    ///Road Divider End
+
+    glEnd();
+}
+void roadNight(void)
+{
+    glBegin(GL_QUADS);
+    glColor3ub(43, 42, 42);
 
     glVertex3f(0,30,0);
     glVertex3f(1600,30,0);
@@ -263,7 +333,7 @@ void apartment(void)
 
 void building1(void)
 {
-    tree2(850,560);
+
     glBegin(GL_QUADS);
     glColor3ub(75, 110, 128);
 
@@ -673,6 +743,30 @@ void surface(void)
 
     glEnd();
 }
+void surfaceNight(void)
+{
+    glBegin(GL_QUADS);
+    glColor3ub(16, 51, 13);
+
+    glVertex3f(0,260,0);
+    glVertex3f(1600,260,0);
+    glVertex3f(1600,620,0);
+    glVertex3f(0,620,0);
+
+    glEnd();
+}
+void skyNight(void)
+{
+    glBegin(GL_QUADS);
+    glColor3ub(43, 42, 42);
+
+    glVertex3f(0,620,0);
+    glVertex3f(1600,620,0);
+    glVertex3f(1600,1200,0);
+    glVertex3f(0,1200,0);
+
+    glEnd();
+}
 void sky(void)
 {
     glBegin(GL_QUADS);
@@ -692,9 +786,21 @@ void trees(void)
     tree1(450,370,50);
     tree1(510,530,40);
 
-
+    tree2(850,560);
     tree2(1430,460);
     tree2(1550,360);
+    tree1(1320,290,40);
+
+}
+void treesNight(void)
+{
+    tree1(80,280,50);
+    tree1(450,370,50);
+    tree1(510,530,40);
+
+    tree2Night(850,560);
+    tree2Night(1430,460);
+    tree2Night(1550,360);
     tree1(1320,290,40);
 
 }
@@ -705,8 +811,14 @@ void clouds(void)
     cloud(780,980,50);
     cloud(1100,1150,50);
 }
-void park (void)
+void cloudsNight(void)
 {
+    cloudNight(480,1100,50);
+    cloudNight(780,980,50);
+    cloudNight(1100,1150,50);
+}
+void park (void)
+{   ///Slider for kids
     glBegin( GL_LINES );
     glColor3f( 0,0,0 );
 
@@ -737,7 +849,7 @@ void park (void)
     glVertex3f(605,470,0);
     glEnd() ;
 
-
+    ///Dolna
     glBegin( GL_LINES );
     glColor3f( 0,0,0 );
 
@@ -829,12 +941,39 @@ void display(void)
     trees();
     park();
     car1();
+    car2();
     van();
     birds();
 
     glFlush ();
 }
-int sunX = 200;
+void displayNight(void)
+{
+    /* clear all pixels */
+    glClear(GL_COLOR_BUFFER_BIT);
+
+
+    roadNight();
+    surfaceNight();
+    skyNight();
+    apartment();
+    building1();
+    building3();
+    building2();
+    lighthouse();
+    solars();
+    moon();
+    cloudsNight();
+    treesNight();
+    park();
+    car1();
+    car2();
+    van();
+    //birds();
+
+    glFlush ();
+}
+/*int sunX = 200;
 void moveSun(int x)
 {
 
@@ -849,32 +988,7 @@ void moveSun(int x)
     glutTimerFunc(25, moveSun, 0);
     glPopMatrix();
 }
-void moveDisplay(void)
-{
-    /* clear all pixels */
-    glClear(GL_COLOR_BUFFER_BIT);
-
-
-    road();
-    surface();
-    sky();
-    apartment();
-    building1();
-    building3();
-    building2();
-    lighthouse();
-    solars();
-    moveSun();
-
-    clouds();
-    trees();
-    park();
-    car1();
-    van();
-    birds();
-
-    glFlush ();
-}
+*/
 void keyboard(unsigned char key,int x,int y)
 {
 
@@ -882,12 +996,12 @@ void keyboard(unsigned char key,int x,int y)
        case 'e':
            exit(0);
            break;
-        case 'm':
-            glutDisplayFunc(moveDisplay);
+        case 'd':
+            glutDisplayFunc(display);
             glutPostRedisplay();
             break;
         case 'n':
-            glutDisplayFunc(display);
+            glutDisplayFunc(displayNight);
             glutPostRedisplay();
             break;
         }
